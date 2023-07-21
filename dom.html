@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom day 2</title>
+  </head>
+  <body>
+    <ul></ul>
+    <button onclick="submitHandler()">Submit</button>
+    <p class="pra"></p>
+    <script>
+      let list = `<li>js</li>
+        <li>node </li>
+         <li>react </li>
+        `;
+      let ul = document.querySelector("ul");
+      ul.style.color = "green";
+      ul.style.border = "1px solid blue";
+      ul.innerHTML = list;
+
+      let title = document.createElement("h2");
+      title.className = "title";
+      title.textContent = "mai hu dom  mujhe banaya gaya hai js se ha ha";
+      title.style.color = " gray";
+      document.body.appendChild(title);
+
+      //   create by looping use
+
+      for (let i = 0; i < 5; i++) {
+        let p = document.createElement("p");
+        p.style.fontSize = "28px";
+        p.textContent = i;
+        p.style.color = "red";
+        document.body.appendChild(p);
+      }
+
+      // on click button
+
+      const submitHandler = () => {
+        let number = prompt("enter any number  > 10 ");
+        const pra = document.querySelector(".pra");
+
+        if (number > 10) {
+          let button = (document.querySelector("button").style.display =
+            "none");
+          alert(" tumne dhokha nahi diya");
+          pra.style.color = "green";
+        } else {
+          alert("dhokha diya gaya hai mujhe");
+          pra.style.color = "red";
+        }
+        pra.style.fontSize = "33px";
+        let button = (document.querySelector("button").style.display = "none");
+
+        pra.innerHTML = number;
+      };
+      //
+    </script>
+  </body>
+</html>
